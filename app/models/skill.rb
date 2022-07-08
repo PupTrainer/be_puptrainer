@@ -4,5 +4,6 @@ class Skill < ApplicationRecord
                           :description,
                           :criteria,
                           :youtube_link
+    has_many :dog_skills
     has_many :dogs, through: :dog_skills
 end 
