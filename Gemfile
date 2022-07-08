@@ -36,6 +36,7 @@ group :development, :test do
   gem "faker"
   gem 'pry'
   gem 'shoulda-matchers'
+  gem 'database_cleaner-active_record'
 end
 
 group :development do
@@ -47,6 +48,7 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'simplecov'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
