@@ -1,0 +1,123 @@
+mutation {
+  createUser( input: {
+  
+    email: "cork@wrigley.com"
+  } ) {
+    user {
+    id
+    username
+    email
+    }
+  }
+}
+//response
+{
+  "errors": [
+    {
+      "message": "Argument 'username' on InputObject 'CreateUserInput' is required. Expected type String!",
+      "locations": [
+        {
+          "line": 2,
+          "column": 22
+        }
+      ],
+      "path": [
+        "mutation",
+        "createUser",
+        "input",
+        "username"
+      ],
+      "extensions": {
+        "code": "missingRequiredInputObjectAttribute",
+        "argumentName": "username",
+        "argumentType": "String!",
+        "inputObjectType": "CreateUserInput"
+      }
+    }
+  ]
+}
+
+//________________________________________________________________
+mutation {
+  createUser( input: {
+    username: "Sammy_Sosa"
+  } ) {
+    user {
+    id
+    username
+    email
+    }
+  }
+}
+
+//response
+{
+  "errors": [
+    {
+      "message": "Argument 'email' on InputObject 'CreateUserInput' is required. Expected type String!",
+      "locations": [
+        {
+          "line": 2,
+          "column": 22
+        }
+      ],
+      "path": [
+        "mutation",
+        "createUser",
+        "input",
+        "email"
+      ],
+      "extensions": {
+        "code": "missingRequiredInputObjectAttribute",
+        "argumentName": "email",
+        "argumentType": "String!",
+        "inputObjectType": "CreateUserInput"
+      }
+    }
+  ]
+}
+
+
+//________________________________________________________________
+//Empty Username/Email also email or username already exists will be this format
+
+mutation {
+  createUser( input: {
+    username: ""
+    email: "cork@wrigley.com"
+  } ) {
+    user {
+    id
+    username
+    email
+    }
+  }
+}
+// response
+{
+  "errors": [
+    {
+      "message": "Validation failed: Username can't be blank"
+    }
+  ]
+}
+mutation {
+  createUser( input: {
+    username: "laskfd"
+    email: ""
+  } ) {
+    user {
+    id
+    username
+    email
+    }
+  }
+}
+// response
+{
+  "errors": [
+    {
+      "message": "Validation failed: Email can't be blank"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+//Missing Attributes **first draft, subject to change/improve, will look like createUser errors
+
+mutation {
+  createDog( input: {
+    userId: 1,
+
+    age: 2
+    breed: "corgi"
+  } ) {
+    id
+    name
+    age
+    breed
+    userId
+  }
+}
+// response
+{
+  "errors": [
+    {
+      "message": "Argument 'name' on InputObject 'CreateDogInput' is required. Expected type String!",
+      "locations": [
+        {
+          "line": 2,
+          "column": 21
+        }
+      ],
+      "path": [
+        "mutation",
+        "createDog",
+        "input",
+        "name"
+      ],
+      "extensions": {
+        "code": "missingRequiredInputObjectAttribute",
+        "argumentName": "name",
+        "argumentType": "String!",
+        "inputObjectType": "CreateDogInput"
+      }
+    }
+  ]
+}

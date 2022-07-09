@@ -1,0 +1,24 @@
+mutation {
+  createUser( input: {
+    username: "Sammy_Sosa"
+    email: "cork@wrigley.com"
+  } ) {
+    user {
+    id
+    username
+    email
+    }
+  }
+}
+//response
+{
+  "data": {
+    "createUser": {
+      "user": {
+        "id": "2",
+        "username": "Sammy_Sosa",
+        "email": "cork@wrigley.com"
+      }
+    }
+  }
+}
