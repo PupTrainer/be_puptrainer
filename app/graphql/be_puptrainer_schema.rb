@@ -1,3 +1,4 @@
+require 'types/mutation_type'
 class BePuptrainerSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
