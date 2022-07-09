@@ -7,7 +7,7 @@ class Mutations::CreateUser < Mutations::BaseMutation
   field :errors, [String], null: false
   
   def resolve(username:, email:)
-    binding.pry
+
     if user = User.find_or_create_by!(username: username, email: email)
       { user: user, errors: [] }
     else
