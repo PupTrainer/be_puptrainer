@@ -6,6 +6,7 @@ module Types
     field :name, String
     field :age, Integer
     field :breed, String
+
     field :user_id, Integer
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
