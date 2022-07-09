@@ -7,7 +7,11 @@ module Types
     field :email, String, null: false
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-    field :dogs, Array, null: true
+    # binding.pry
+    field :dogs, Types::DogType
+    def dogs
+      User.find(:id).dogs
+    end 
   end
 
 end
