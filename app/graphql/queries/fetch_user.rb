@@ -4,7 +4,7 @@ module Queries
     argument :id, ID, required: true
 
     def resolve(id:)
-      binding.pry
+      # binding.pry
       user = User.find(id.to_i)
       # dogs = user.dogs
       # {user: user, dogs: dogs}

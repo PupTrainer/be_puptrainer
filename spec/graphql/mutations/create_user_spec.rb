@@ -3,9 +3,7 @@ require 'rails_helper'
 module Mutations
   RSpec.describe CreateUser, type: :request do
     describe '.resolve' do
-      # before do
-      #   @user = create(:user)
-      # end 
+
       it 'creates a user' do
         count = User.count
         post '/graphql', params: { query: query }
@@ -25,7 +23,6 @@ module Mutations
     end
       
     def query
-       #(user_id:)
       <<~GQL
         mutation {
           createUser(input: {
