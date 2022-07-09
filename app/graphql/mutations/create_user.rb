@@ -3,9 +3,11 @@ class Mutations::CreateUser < Mutations::BaseMutation
   argument :email, String, required: true
 
   field :user, Types::UserType, null: false
+  field :dogs, Types::DogType, null: false
   field :errors, [String], null: false
   
   def resolve(username:, email:)
+    binding.pry
     if user = User.find_or_create_by!(username: username, email: email)
       { user: user, errors: [] }
     else

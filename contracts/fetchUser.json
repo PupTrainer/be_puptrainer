@@ -1,0 +1,73 @@
+query {
+  fetchUser(id: 1){
+    id
+    username
+    email
+    dogs {
+      id
+      name
+      age
+      breed
+    }
+  }
+}
+
+{
+  "data": {
+    "fetchUser": {
+      "id": "1",
+      "username": "brisket_enthusiast",
+      "email": "steak@meats.com",
+      "dogs": [
+        {
+          "id": "1",
+          "name": "skeeter",
+          "age": 2,
+          "breed": "cardigan welsch corgi"
+        },
+        {
+          "id": "2",
+          "name": "jumbo",
+          "age": 2,
+          "breed": "corgi"
+        },
+        {
+          "id": "3",
+          "name": "jumbo",
+          "age": 2,
+          "breed": "corgi"
+        },
+        {
+          "id": "4",
+          "name": "jumbo",
+          "age": 2,
+          "breed": "corgi"
+        },
+        {
+          "id": "5",
+          "name": "jumbo",
+          "age": 2,
+          "breed": "corgi"
+        },
+        {
+          "id": "6",
+          "name": "jumbo",
+          "age": 2,
+          "breed": "corgi"
+        },
+        {
+          "id": "7",
+          "name": "jumbo",
+          "age": 2,
+          "breed": "corgi"
+        },
+        {
+          "id": "8",
+          "name": "jumbo",
+          "age": 2,
+          "breed": "corgi"
+        }
+      ]
+    }
+  }
+}
