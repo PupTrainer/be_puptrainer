@@ -1,0 +1,33 @@
+//bad id
+query {
+  fetchUser(id: 8903274){
+    id
+    username
+    email
+    dogs {
+      id
+      name
+      age
+      breed
+    }
+  }
+}
+
+//response
+{
+  "data": null,
+  "errors": [
+    {
+      "message": "User does not exist.",
+      "locations": [
+        {
+          "line": 2,
+          "column": 3
+        }
+      ],
+      "path": [
+        "fetchUser"
+      ]
+    }
+  ]
+}

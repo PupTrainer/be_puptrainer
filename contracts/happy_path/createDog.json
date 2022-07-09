@@ -1,0 +1,28 @@
+mutation {
+  createDog( input: {
+    userId: 1,
+    name: "Barry Bonds"
+    age: 2
+    breed: "corgi"
+  } ) {
+    id
+    name
+    age
+    breed
+    userId
+  }
+}
+
+// response
+
+{
+  "data": {
+    "createDog": {
+      "id": "9",
+      "name": "Barry Bonds",
+      "age": 2,
+      "breed": "corgi",
+      "userId": 1
+    }
+  }
+}
