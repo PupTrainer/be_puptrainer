@@ -242,6 +242,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   standardrb
   sprockets (< 4)
+  standardrb
   tzinfo-data
 
 RUBY VERSION
