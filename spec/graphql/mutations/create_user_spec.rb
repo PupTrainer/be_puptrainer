@@ -16,7 +16,7 @@ module Mutations
         expect(data[:user][:email]).to be_a String
 
         expect(data[:user]).to have_key(:id)
-        expect(data[:user][:id]).to be_a String
+        expect(data[:user][:id]).to be_ String
 
         expect(count).to_not eq(User.count)
       end

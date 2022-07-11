@@ -9,7 +9,7 @@ gem "rails", "~> 5.2.8"
 gem "pg", ">= 0.18", "< 2.0"
 # Use Puma as the app server
 
-gem 'puma',  '~> 4.3.9'
+gem "puma", "~> 4.3.9"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
@@ -30,13 +30,13 @@ gem "jsonapi-serializer"
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
 
-gem 'sprockets', '< 4'
+gem "sprockets", "< 4"
 
-gem 'brakeman'
+gem "brakeman"
 
-gem 'rubocop-rails', require: false
+gem "rubocop-rails", require: false
 
-gem 'bundler-audit'
+gem "bundler-audit"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -52,14 +52,13 @@ group :development do
   gem "listen", ">= 3.0.5", "< 3.2"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'graphiql-rails'
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
+  gem "graphiql-rails"
 end
 group :test do
-  gem 'rspec-rails'
-  gem 'simplecov'
-
+  gem "rspec-rails"
+  gem "simplecov"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

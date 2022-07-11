@@ -9,7 +9,6 @@ module Types
 
       argument :created_at, GraphQL::Types::ISO8601DateTime
       argument :updated_at, GraphQL::Types::ISO8601DateTime
-   
-    end 
-  end 
-end 
+    end
+  end
+end
