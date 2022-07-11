@@ -1,7 +1,8 @@
+// createDog mutation / endpoint 
 mutation {
   createDog( input: {
     userId: 1,
-    name: "Barry Bonds"
+    name: "jumbo"
     age: 2
     breed: "corgi"
   } ) {
@@ -9,7 +10,11 @@ mutation {
     name
     age
     breed
-    userId
+    user {
+      id
+      username
+      email
+    }
   }
 }
 
@@ -18,11 +23,15 @@ mutation {
 {
   "data": {
     "createDog": {
-      "id": "9",
-      "name": "Barry Bonds",
+      "id": "3",
+      "name": "jumbo",
       "age": 2,
       "breed": "corgi",
-      "userId": 1
+      "user": {
+        "id": "1",
+        "username": "brisket_enthusiast",
+        "email": "steak@meats.com"
+      }
     }
   }
 }
