@@ -5,5 +5,6 @@ module Types
     include GraphQL::Types::Relay::HasNodesField
 
     field :fetch_user, resolver: Queries::FetchUser
+    field :fetch_skills, resolver: Queries::FetchSkills
   end
 end
