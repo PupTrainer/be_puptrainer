@@ -6,11 +6,9 @@ module Queries
             it 'returns a dog with the given id' do 
                 user1 = User.create!(username: 'bigdaddy', email: 'bigdaddy@brisketville.com')
                 dog1 = Dog.create!(name: "Olive", age: 2, breed: 'australian shepherd mix', user_id: user1.id)
-                
 
                 post '/graphql', params: { query: query }
                 json = JSON.parse(response.body, symbolize_names: true)
-                # require 'pry', binding.pry 
                 data = json[:data][:fetchDog]
 
                 expect(data).to have_key(:name)
