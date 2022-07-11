@@ -4,7 +4,6 @@ module Queries
     argument :id, ID, required: true
 
     def resolve(id:)
-      # binding.pry
       dog = Dog.find(id.to_i)
     rescue ActiveRecord::RecordNotFound => _e
       GraphQL::ExecutionError.new('Dog does not exist.')
