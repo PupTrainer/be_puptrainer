@@ -3,7 +3,7 @@ module Queries
     type [Types::SkillType], null: false
 
     def resolve
-      Skill.all.order(level: :desc)
+      Skill.all.order(level: :asc)
     end 
 
   end
