@@ -6,5 +6,6 @@ module Types
 
     field :fetch_user, resolver: Queries::FetchUser
     field :fetch_skills, resolver: Queries::FetchSkills
+    field :fetch_dog, resolver: Queries::FetchDog
   end
 end
