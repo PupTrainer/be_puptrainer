@@ -7,6 +7,6 @@ class Mutations::CreateDog < Mutations::BaseMutation
 
   def resolve(user_id:, **attributes)
     user = User.find(user_id)
-    User.find(user_id).dogs.create!(attributes)
+    dog = User.find(user_id).dogs.create!(attributes)
   end
 end
