@@ -23,20 +23,24 @@ module Mutations
 
       def query
         <<~GQL
-          mutation {
-            createUser(input: {
-
-              username: "CheeseMan"
-              email: "cheese@wiz.com"
-            }) {
-              user {
-                id
-                username
-                email
-              }
-              errors
-            }
-          }
+                    mutation {
+                      createUser(input: {
+          <<<<<<< HEAD
+          
+          =======
+                        
+          >>>>>>> 73cbd4f (rebase)
+                        username: "CheeseMan"
+                        email: "cheese@wiz.com"
+                      }) {
+                        user {
+                          id
+                          username
+                          email
+                        }
+                        errors
+                      }
+                    }
         GQL
       end
     end
