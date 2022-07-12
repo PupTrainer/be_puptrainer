@@ -11,6 +11,7 @@ module Mutations
         post "graphql/", params: {query: query}
         response_body = JSON.parse(response.body, symbolize_names: true)
 
+        # Test response shape 
         expect(response_body.keys.count).to eq 1
         expect(response_body[:dog_skill].keys.count).to eq 6
         expect(response_body[:dog_skill][:id].class).to eq BigInt
@@ -19,8 +20,10 @@ module Mutations
         expect(response_body[:dog_skill][:status].class).to eq Boolean
         expect(response_body[:dog_skill][:created_at].class).to eq DateTime
         expect(response_body[:dog_skill][:updated_at].class).to eq DateTime
+
         # Test that update was timestamped 
         expect(response_body[:dog_skill][:updated_at]).to_not eq dog_skill.created_at
+        
         # Test that status was updated specifically to true
         expect(response_body[:dog_skill][:status]).to eq true
 
