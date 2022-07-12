@@ -7,12 +7,11 @@ module Types
     field :email, String, null: false
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-    
+
     field :dogs, [Types::DogType], null: true
     def dogs
-      user = User.find(self.object.id)
+      user = User.find(object.id)
       user.dogs
-    end 
+    end
   end
-
 end
