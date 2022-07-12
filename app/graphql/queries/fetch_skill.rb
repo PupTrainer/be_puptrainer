@@ -1,6 +1,7 @@
 module Queries
   class FetchSkill < Queries::BaseQuery
-    type [Types::SkillType], null: false
+    type Types::SkillType, null: false
+    argument :id, ID, required: true
 
     def resolve(id:)
       skill = Skill.find(id.to_i)
