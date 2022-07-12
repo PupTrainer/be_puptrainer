@@ -28,23 +28,24 @@ gem "jsonapi-serializer"
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
 
+
 gem "sprockets", "< 4"
-
-gem "brakeman"
-
-gem "rubocop-rails", require: false
-
-gem "bundler-audit"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails"
   gem "faker"
-  gem "pry"
-  gem "shoulda-matchers"
-  gem "database_cleaner-active_record"
-  gem "standardrb"
+  gem 'pry'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner-active_record'
+  # vulnerability checker
+  gem 'brakeman'
+  # gemfile checker
+  gem 'bundler-audit'
+  # Ruby linter
+  gem 'rubocop-rails'
+
 end
 
 group :development do
