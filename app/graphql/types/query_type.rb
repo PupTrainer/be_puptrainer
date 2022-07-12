@@ -6,5 +6,9 @@ module Types
 
     field :fetch_user, resolver: Queries::FetchUser
     field :fetch_skills, resolver: Queries::FetchSkills
+<<<<<<< aw_dev_branch
+=======
+    field :fetch_dog, resolver: Queries::FetchDog
+>>>>>>> main
   end
 end
