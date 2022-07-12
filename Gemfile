@@ -44,7 +44,7 @@ group :development, :test do
   gem "pry"
   gem "shoulda-matchers"
   gem "database_cleaner-active_record"
-  gem 'standardrb'
+  gem "standardrb"
 end
 
 group :development do
