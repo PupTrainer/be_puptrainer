@@ -7,6 +7,6 @@ module Types
       argument :created_at, GraphQL::Types::ISO8601DateTime
       argument :updated_at, GraphQL::Types::ISO8601DateTime
       argument :dogs, Array, required: true
-    end 
-  end 
-end 
+    end
+  end
+end
