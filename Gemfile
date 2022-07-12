@@ -28,13 +28,8 @@ gem 'jsonapi-serializer'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# Specify sprockets to avoid Heroku bug
 gem 'sprockets', '< 4'
-
-gem 'brakeman'
-
-gem 'rubocop-rails', require: false
-
-gem 'bundler-audit'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,6 +39,12 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'database_cleaner-active_record'
+  # vulnerability checker
+  gem 'brakeman'
+  # gemfile checker
+  gem 'bundler-audit'
+  # Ruby linter
+  gem 'standard'
 end
 
 group :development do
