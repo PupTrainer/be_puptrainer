@@ -30,21 +30,27 @@ module Queries
       end
 
       it 'returns a user and any dogs they have from a given ID' do 
-        
+      
         post '/graphql', params: { query: query }
         json = JSON.parse(response.body, symbolize_names: true)
-        dogs = json[:data][:fetchUser]
-        expect(data).to be_a Hash
-        expect(data).to have_key(:id)
-        expect(data[:id]).to be_a String
-        
-        expect(data).to have_key(:username)
-        expect(data[:username]).to be_a String
-        expect(data[:username]).to eq(@user1.username)
-        
-        expect(data).to have_key(:email)
-        expect(data[:email]).to be_a String
-        expect(data[:email]).to eq(@user1.email)
+        dogs = json[:data][:fetchUser][:dogs]
+        expect(dogs).to be_an Array
+        dogs.each do |dog|
+          expect(dog).to have_key(:id)
+          expect(dog[:id]).to be_a String
+
+          expect(dog).to have_key(:name)
+          expect(dog[:name]).to be_a String
+
+          expect(dog).to have_key(:age)
+          expect(dog[:age]).to be_an Integer
+
+          expect(dog).to have_key(:breed)
+          expect(dog[:breed]).to be_a String
+        end 
+        expect(dogs.first[:name]).to eq(@dog1.name)
+        expect(dogs.last[:name]).to eq(@dog2.name)
+     
 
       end
     end
