@@ -16,5 +16,22 @@ module Queries
 
       end
     end
+
+    def query
+      <<~GQL
+        query {
+          fetchSkills{
+            id
+            name
+            level
+            description
+            criteria
+            youtubeLink
+          }
+        }
+      GQL
+    end 
+
+
   end
 end
