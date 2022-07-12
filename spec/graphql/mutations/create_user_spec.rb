@@ -21,6 +21,16 @@ module Mutations
         expect(count).to_not eq(User.count)
       end
 
+      it 'will return an error message if given duplicate username' do 
+        post "/graphql", params: {query: query}
+        post "/graphql", params: {query: query_2}
+
+        json = JSON.parse(response.body, symbolize_names: true)
+       
+        data = json[:errors]
+        expect(data[0]).to eq({message: 'Cannot return null for non-nullable field User.id'})
+      end 
+
       def query
         <<~GQL
           mutation {
@@ -39,6 +49,25 @@ module Mutations
           }
         GQL
       end
+
+      def query_2
+        <<~GQL
+          mutation {
+            createUser(input: {
+              
+              username: "CheeseMan"
+              email: "gouda@wiz.com"
+            }) {
+              user {
+                id
+                username
+                email
+              }
+              errors
+            }
+          }
+        GQL
+      end 
     end
   end
 end
