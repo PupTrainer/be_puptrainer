@@ -10,10 +10,31 @@ module Queries
 
         post '/graphql', params: { query: query }
         json = JSON.parse(response.body, symbolize_names: true)
-        data = json[:data][:fetchSkills]
+        skills = json[:data][:fetchSkills]
 
-        expect(data).to be_an Array
+        expect(skills).to be_an Array
+        expect(skills.count).to eq(3)
+        skills.each do |skill|
+          expect(skill).to be_a Hash 
 
+          expect(skill).to have_key(:id)
+          expect(skill[:id]).to be_a String
+
+          expect(skill).to have_key(:name)
+          expect(skill[:name]).to be_a String
+
+          expect(skill).to have_key(:level)
+          expect(skill[:level]).to be_an Integer
+
+          expect(skill).to have_key(:description)
+          expect(skill[:description]).to be_a String
+
+          expect(skill).to have_key(:criteria)
+          expect(skill[:criteria]).to be_a String
+
+          expect(skill).to have_key(:youtubeLink)
+          expect(skill[:youtubeLink]).to be_a String
+        end 
       end
     end
 
