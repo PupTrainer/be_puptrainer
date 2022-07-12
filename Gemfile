@@ -44,7 +44,7 @@ group :development, :test do
   # gemfile checker
   gem 'bundler-audit'
   # Ruby linter
-  gem 'rubocop'
+  gem 'rubocop-rails'
 end
 
 group :development do
