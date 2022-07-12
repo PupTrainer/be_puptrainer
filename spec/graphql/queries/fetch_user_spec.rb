@@ -15,5 +15,22 @@ module Queries
       end
     end
 
+    def query
+      <<~GQL
+        query {
+          fetchUser(id: 1){
+            id
+            username
+            email
+            dogs {
+              id
+              name
+              age
+              breed
+            }
+          }
+        }
+      GQL
+    end 
   end
 end
