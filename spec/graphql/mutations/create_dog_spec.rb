@@ -4,7 +4,6 @@ module Mutations
   RSpec.describe CreateDog, type: :request do
     describe '.resolve' do
       it 'creates a dog' do
-      
         expect(Dog.count).to eq(0)
         user = create_list(:user, 2)
         # dog = create(:dog, {user_id: user.id})
