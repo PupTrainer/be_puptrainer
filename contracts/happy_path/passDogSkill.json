@@ -1,0 +1,36 @@
+// http request body:
+mutation {
+    passDogSkill(input: {
+      dogSkillId:5
+    }) {
+          dogSkill {
+          id
+          dogId
+          skillId
+        }
+      errors
+    }
+}
+
+// Successful Response: 
+{
+"data": {
+    "passDogSkill": {
+    "dogSkill": {
+        "id": "2",
+        "dogId": 1,
+        "skillId": 1
+    },
+    "errors": []
+    }
+}
+}
+
+// Possible Errors
+//
+// "Warning: You're trying to pass a skill that our records indicate this 
+//  pet has already passed"
+//
+// This error indicates that the pet_skill record was found in our database, 
+// but its value was already set to true. This should not break any functionality, 
+// but may indicate that something isn't behaving correctly.
