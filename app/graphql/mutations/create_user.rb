@@ -13,8 +13,6 @@ class Mutations::CreateUser < Mutations::BaseMutation
     
     rescue ActiveRecord::ValidationFailed => _e
     GraphQL::ExecutionError.new("Username has been taken.")
-    # else
-    #   {user: nil, errors: user.errors.full_messages}
     end
   end
 end
