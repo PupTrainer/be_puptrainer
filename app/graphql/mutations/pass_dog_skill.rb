@@ -14,8 +14,9 @@ class Mutations::PassDogSkill < Mutations::BaseMutation
             dog_skill.update!(passed: true, updated_at: Time.now)
             {dog_skill: dog_skill, errors: []}
         elsif dog_skill.passed == true
-            {dog_skill: dog_skill, errors: ["Warning: You're trying to pass a skill that our records indicate this pet has already passed"]}
-            raise GraphQL::ExecutionError, "Server Error: Your record was found, but the status failed to update."
+            {dog_skill: dog_skill, errors: ["Warning: 'pass' was already set to 'true' for this dog_skill"]}
+        else
+            raise GraphQL::ExecutionError, "Server Error: our app's gone off the rails! please report this error to BE team."
         end
     end
 end
