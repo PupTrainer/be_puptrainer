@@ -6,7 +6,7 @@ class Mutations::CreateDog < Mutations::BaseMutation
   type Types::DogType
 
   def resolve(user_id:, **attributes)
-    # binding.pry
+
     user = User.find(user_id)
     dog = User.find(user_id).dogs.create!(attributes)
   end
