@@ -6,11 +6,11 @@ module Queries
             it 'returns a dog with the given id' do 
                 user1 = User.create!(username: 'bigdaddy', email: 'bigdaddy@brisketville.com')
                 dog1 = Dog.create!(name: "Olive", age: 2, breed: 'australian shepherd mix', user_id: user1.id)
-
-                post '/graphql', params: { query: query }
+                post '/graphql', params: { query: good_query(dog1.id) }
                 json = JSON.parse(response.body, symbolize_names: true)
                 data = json[:data][:fetchDog]
-
+                
+                
                 expect(data).to have_key(:name)
                 expect(data[:name]).to be_a(String)
                 expect(data).to have_key(:age)
@@ -27,10 +27,20 @@ module Queries
             end 
         end 
 
-        def query 
+        describe 'sad path' do 
+            it 'returns an error message if given a bad id' do 
+                post "/graphql", params: { query: bad_query }
+
+                json = JSON.parse(response.body, symbolize_names: true)
+
+                expect(json[:errors].first[:message]).to eq("Dog does not exist.")
+            end 
+        end 
+
+        def good_query(id)
             <<~GQL
                 query {
-                    fetchDog(id: 1) {
+                    fetchDog(id: #{id}) {
                         name
                         age
                         breed
@@ -43,5 +53,23 @@ module Queries
                 }
             GQL
         end 
+
+        def bad_query
+                <<~GQL
+                    query {
+                        fetchDog(id: 42) {
+                            name
+                            age
+                            breed
+                            user {
+                                id
+                                username
+                                email
+                            }
+                        }
+                    }
+                GQL
+            end 
+        end 
     end 
-end 
+
