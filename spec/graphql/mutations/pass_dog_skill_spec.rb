@@ -10,7 +10,7 @@ module Mutations
         skill = Skill.create!(name: "Oh You", level: 3 , description: "Running and Barking will no longer annoy your owners", criteria: " When running and barking, humans should not correct the behavior, but should sign and say 'oh, you....'" , youtube_link: "AtuxAJjygO8", created_at: Time.parse("2020.07.12"), updated_at: Time.parse("2020.07.12"))
         dog_skill = dog.dog_skills.create!(passed: false, dog_id: dog.id, skill_id: skill.id, created_at: Time.parse("2022.07.12"), updated_at: Time.parse("2022.07.12"))
         
-        post "/graphql", params: {query: good_query}
+        post "/graphql", params: {query: good_query(dog_skill.id)}
         response_body = JSON.parse(response.body, symbolize_names: true)
 
         # Test response shape 
@@ -23,7 +23,7 @@ module Mutations
         expect(response_body[:data][:passDogSkill][:dogSkill][:skillId]).to eq dog_skill.skill_id
         expect(response_body[:data][:passDogSkill][:dogSkill][:passed]).to eq true
         expect(Time.parse(response_body[:data][:passDogSkill][:dogSkill][:createdAt])).to eq dog_skill.created_at
-
+        expect(response_body[:data][:passDogSkill][:errors]).to eq []
         # Test that update was timestamped 
         expect(Time.parse(response_body[:data][:passDogSkill][:dogSkill][:updatedAt])).to_not eq dog_skill.created_at
 
@@ -32,7 +32,6 @@ module Mutations
       end
 
       it "errors when passed a bad id" do
-
         user = create(:user)
         dog = create(:dog, user_id: user.id)
         skill = Skill.create!(name: "Oh You", level: 3 , description: "Running and Barking will no longer annoy your owners", criteria: " When running and barking, humans should not correct the behavior, but should sign and say 'oh, you....'" , youtube_link: "AtuxAJjygO8", created_at: Time.parse("2020.07.12"), updated_at: Time.parse("2020.07.12"))
@@ -44,11 +43,24 @@ module Mutations
         expect(response_body[:errors].first[:message]).to eq "Bad ID: dog_skill not found!"
       end
 
-      def good_query
+      it "update a dog skill's 'passed' status to true" do
+        user = create(:user)
+        dog = create(:dog, user_id: user.id)
+        skill = Skill.create!(name: "Oh You", level: 3 , description: "Running and Barking will no longer annoy your owners", criteria: " When running and barking, humans should not correct the behavior, but should sign and say 'oh, you....'" , youtube_link: "AtuxAJjygO8", created_at: Time.parse("2020.07.12"), updated_at: Time.parse("2020.07.12"))
+        dog_skill = dog.dog_skills.create!(passed: false, dog_id: dog.id, skill_id: skill.id, created_at: Time.parse("2022.07.12"), updated_at: Time.parse("2022.07.12"))
+        
+        post "/graphql", params: {query: good_query(dog_skill.id)}
+        post "/graphql", params: {query: good_query(dog_skill.id)}
+        response_body = JSON.parse(response.body, symbolize_names: true)
+        
+        expect(response_body[:data][:passDogSkill][:errors]).to eq ["Warning: 'pass' was already set to 'true' for this dog_skill"]        
+      end
+
+      def good_query(id)
         <<~GQL
         mutation {
           passDogSkill(input: {
-            dogSkillId:1
+            dogSkillId: #{id}
           }) {
               dogSkill {
                 id
@@ -69,7 +81,7 @@ module Mutations
         <<~GQL
         mutation {
           passDogSkill(input: {
-            dogSkillId:5
+            dogSkillId: 9999999
           }) {
               dogSkill {
                 id
