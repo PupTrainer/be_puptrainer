@@ -125,7 +125,7 @@ module Queries
     def query_by_email
       <<~GQL
         query {
-          fetchUser(email: #{@user1.email}){
+          fetchUser(email: "#{@user1.email}"){
             id
             username
             email
