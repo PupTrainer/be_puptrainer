@@ -6,7 +6,7 @@ module Queries
             it 'returns a skill with the given id' do 
                 sit = Skill.create!(name: "Sit", level: 1, description: 'Step 1. Get your dogs attention with a treat. 2. While raising your hand upwards, say "sit". 3. Your dog should sit and look at you. 4. Reward your dog with the treat.', criteria: "Your dog should sit right as you are saying the command, and stay sitting until you release them", youtube_link: "https://www.youtube.com/watch?v=EDgi2sLlWAU")
                 
-                post '/graphql', params: { query: query }
+                post '/graphql', params: { query: query(sit.id) }
                 json = JSON.parse(response.body, symbolize_names: true)
                 data = json[:data][:fetchSkill]
 
@@ -44,10 +44,10 @@ module Queries
             end
         end  
         
-        def query
+        def query(id)
             <<~GQL
                 query {
-                    fetchSkill(id: 1) {
+                    fetchSkill(id: #{id}) {
                         name
                         level
                         description
