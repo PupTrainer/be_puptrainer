@@ -1,10 +1,16 @@
 module Queries
   class FetchUser < Queries::BaseQuery
     type Types::UserType, null: false
-    argument :id, ID, required: true
+    argument :id, ID, required: false
+    argument :email, String, required: false
 
-    def resolve(id:)
-      user = User.find(id.to_i)
+    def resolve(**args)
+      if args[:id]
+        id = args[:id].to_i
+        user = User.find_by(id: id)
+      elsif args[:email]
+        user = User.find_by(email: args[:email])
+      end  
     rescue ActiveRecord::RecordNotFound => _e
       GraphQL::ExecutionError.new("User does not exist.")
     rescue ActiveRecord::RecordInvalid => e
