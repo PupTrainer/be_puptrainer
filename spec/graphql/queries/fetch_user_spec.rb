@@ -62,11 +62,30 @@ module Queries
         expect(data[:dogs]).to be_an Array
         expect(data[:dogs].empty?).to eq(true)
         expect(data[:dogs].count).to eq(0)
+      end 
 
+      it 'allows for using email in fetchUser to find a user' do
+        post '/graphql', params: { query: query_by_email }
+        json = JSON.parse(response.body, symbolize_names: true)
+        data = json[:data][:fetchUser]
+        expect(data).to be_a Hash
+        expect(data).to have_key(:id)
+        expect(data[:id]).to be_a String
+        
+        expect(data).to have_key(:username)
+        expect(data[:username]).to be_a String
+        expect(data[:username]).to eq(@user1.username)
+        
+        expect(data).to have_key(:email)
+        expect(data[:email]).to be_a String
+        expect(data[:email]).to eq(@user1.email)
+        
+        expect(data).to have_key(:dogs)
+        expect(data[:dogs]).to be_an Array
       end 
 
     end
-
+    ## query methods for graphQL post reqests
     def query
       <<~GQL
         query {
@@ -89,6 +108,24 @@ module Queries
       <<~GQL
         query {
           fetchUser(id: #{@user2.id}){
+            id
+            username
+            email
+            dogs {
+              id
+              name
+              age
+              breed
+            }
+          }
+        }
+      GQL
+    end 
+
+    def query_by_email
+      <<~GQL
+        query {
+          fetchUser(email: #{@user1.email}){
             id
             username
             email
