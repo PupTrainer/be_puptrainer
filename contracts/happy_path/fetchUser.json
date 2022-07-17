@@ -1,3 +1,4 @@
+// fetch user by ID
 query {
   fetchUser(id: 1){
     id
@@ -63,6 +64,46 @@ query {
         },
         {
           "id": "8",
+          "name": "jumbo",
+          "age": 2,
+          "breed": "corgi"
+        }
+      ]
+    }
+  }
+}
+// ________________________________________________________________
+// fetchUser by email
+query {
+  fetchUser(email: "steak@meats.com"){
+    id
+    username
+    email
+    dogs {
+      id
+      name
+      age
+      breed
+    }
+  }
+}
+
+//response
+{
+  "data": {
+    "fetchUser": {
+      "id": "1",
+      "username": "brisket_enthusiast",
+      "email": "steak@meats.com",
+      "dogs": [
+        {
+          "id": "1",
+          "name": "skeeter",
+          "age": 2,
+          "breed": "cardigan welsch corgi"
+        },
+        {
+          "id": "2",
           "name": "jumbo",
           "age": 2,
           "breed": "corgi"
