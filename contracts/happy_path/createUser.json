@@ -22,3 +22,47 @@ mutation {
     }
   }
 }
+
+// createUser with dogs in response
+mutation {
+  createUser( input: {
+    username: "Sammy_Sosa"
+    email: "cork@wrigley.com"
+  } ) {
+    user {
+    id
+    username
+    email
+    dogs {
+      name
+      age
+      breed
+      }
+    }
+  }
+}
+// response
+{
+  "data": {
+    "createUser": {
+      "user": {
+        "id": "1",
+        "username": "brisket_enthusiast",
+        "email": "steak@meats.com",
+        "dogs": [
+          {
+            "name": "skeeter",
+            "age": 2,
+            "breed": "cardigan welsch corgi"
+          },
+          {
+            "name": "jumbo",
+            "age": 2,
+            "breed": "corgi"
+          }
+        ]
+      },
+      "errors": []
+    }
+  }
+}
