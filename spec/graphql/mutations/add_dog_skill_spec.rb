@@ -4,8 +4,7 @@ module Mutations
   RSpec.describe AddDogSkill, type: :request do
     describe '.resolve' do
       it 'returns a dog_skill ' do
-        # require 'pry'
-        # binding.pry
+      
         user = create(:user)
         dog = create(:dog, user_id: user.id)
         skill = Skill.create!(name: 'Sit', level: 1,
@@ -32,7 +31,6 @@ module Mutations
               passed
             }
           }
-
         GQL
       end
     end
