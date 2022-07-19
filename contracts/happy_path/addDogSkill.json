@@ -1,0 +1,21 @@
+// http request body:
+mutation {
+  addDogSkill(input: {dogId: 2, skillId: 3, passed: false}) {
+    id
+    dogId
+    skillId
+    passed
+  }
+}
+// Successful Response:
+
+{
+  "data": {
+    "addDogSkill": {
+      "id": "37",
+      "dogId": 2,
+      "skillId": 3,
+      "passed": false
+    }
+  }
+}
