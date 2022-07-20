@@ -1,6 +1,6 @@
 class Mutations::AddDogSkill < Mutations::BaseMutation
 
-  argument :skill_id, Integer, required: true
+  argument :skill_id, Integer, required: false
   argument :dog_id, Integer, required: false
   argument :passed, Boolean, required: true
 
