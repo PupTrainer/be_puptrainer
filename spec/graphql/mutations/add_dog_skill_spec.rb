@@ -21,6 +21,15 @@ module Mutations
         expect(data[:passed]).to_not eq true
       end
 
+      it 'will return an error message if required inputs are missing' do 
+        post "/graphql", params: { query: bad_query }
+
+        json = JSON.parse(response.body, symbolize_names: true)
+        data = json[:errors]
+
+        expect(data[0]).to eq("One or more required inputs missing. Please double check and try again")
+      end 
+
       def query
         <<~GQL
                   mutation {
