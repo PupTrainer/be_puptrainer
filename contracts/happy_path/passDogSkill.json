@@ -1,18 +1,17 @@
 // http request body:
 mutation {
-    passDogSkill(input: {
-      dog_id: 5
-      skill_id: 2
-    }) {
-          dogSkill {
-          id
-          dogId
-          skillId
-        }
-      errors
+   passDogSkill(input: {
+     dogIdInput: 1
+     skillIdInput: 4
+  }) {
+        dogSkill {
+        id
+        dogId
+        skillId
     }
+    errors
+  }
 }
-
 // Successful Response: 
 {
 "data": {
