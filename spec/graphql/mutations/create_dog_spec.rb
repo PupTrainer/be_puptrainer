@@ -31,6 +31,18 @@ module Mutations
         expect(data[0][:message]).to eq("One or more required inputs missing. Please double check and try again")
 
       end
+
+      it 'returns an error message if dog age is missing' do 
+       
+        post "/graphql", params: { query: missing_dog_age }
+
+        json = JSON.parse(response.body, symbolize_names: true)
+        data = json[:errors]
+
+        expect(data[0][:message]).to eq("One or more required inputs missing. Please double check and try again")
+
+      end
+      
       def query
         <<~GQL
                 mutation {
@@ -62,6 +74,30 @@ module Mutations
 
                     name: null
                     age: 2
+                    breed: "Saint Bernard"
+                    userId: #{@user.id}
+                  })  {
+                      id
+                      name
+                      age
+                      breed
+                      user {
+            id
+            username
+            email
+              }
+            }
+          }
+        GQL
+      end
+
+      def missing_dog_age
+        <<~GQL
+                mutation {
+                  createDog(input: {
+
+                    name: "Cujo"
+                    age: null
                     breed: "Saint Bernard"
                     userId: #{@user.id}
                   })  {
