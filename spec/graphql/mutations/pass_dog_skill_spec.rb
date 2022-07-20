@@ -14,7 +14,6 @@ module Mutations
         response_body = JSON.parse(response.body, symbolize_names: true)
 
         # Test response shape 
-        # binding.pry
         expect(response_body.keys.count).to eq 1
         expect(response_body[:data].keys.count).to eq 1
         expect(response_body[:data][:passDogSkill].keys.count).to eq 2
