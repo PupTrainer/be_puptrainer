@@ -8,12 +8,15 @@ module Queries
         @dog1 = Dog.create!(name: "Tim Cruise", age: 6, breed: 'Dachshund', user_id: @user1.id)
         @dog2 = Dog.create!(name: "50 Cent", age: 2, breed: 'German Shorthair Pointer', user_id: @user1.id) 
         @user2 = User.create!(username: 'new_shoes', email: 'cool@shoes.com')  
+        @skill1 = Skill.create!(name: "Sit", level: 1, description: 'Step 1. Get your dogs attention with a treat. 2. While raising your hand upwards, say "sit". 3. Your dog should sit and look at you. 4. Reward your dog with the treat.', criteria: "Your dog should sit right as you are saying the command, and stay sitting until you release them", youtube_link: "https://www.youtube.com/watch?v=EDgi2sLlWAU")
+        @dogskill1 = DogSkill.create!(dog_id: @dog1.id, skill_id: @skill1.id)
       end
 
       it 'returns a user from a given ID' do 
         post '/graphql', params: { query: query }
         json = JSON.parse(response.body, symbolize_names: true)
         data = json[:data][:fetchUser]
+
         expect(data).to be_a Hash
         expect(data).to have_key(:id)
         expect(data[:id]).to be_a String
@@ -30,7 +33,7 @@ module Queries
         expect(data[:dogs]).to be_an Array
       end
 
-      it 'returns a user and any dogs they have from a given ID' do 
+      it 'returns a user and any dogs with their skills from a given ID' do 
         post '/graphql', params: { query: query }
         json = JSON.parse(response.body, symbolize_names: true)
         dogs = json[:data][:fetchUser][:dogs]
@@ -51,6 +54,13 @@ module Queries
         end 
         expect(dogs.first[:name]).to eq(@dog1.name)
         expect(dogs.last[:name]).to eq(@dog2.name)
+        expect(dogs[0]).to have_key(:skills)
+        expect(dogs[0][:skills]).to be_a Array
+        expect(dogs[0][:skills][0]).to have_key(:name)
+        expect(dogs[0][:skills][0]).to have_key(:level)
+        expect(dogs[0][:skills][0]).to have_key(:description)
+        expect(dogs[0][:skills][0]).to have_key(:criteria)
+        expect(dogs[0][:skills][0]).to have_key(:youtubeLink)
       end
 
       it 'returns an empty dog array if user has no dogs' do
@@ -98,6 +108,14 @@ module Queries
               name
               age
               breed
+              skills {
+                id
+                name
+                level
+                description
+                criteria
+                youtubeLink
+              }
             }
           }
         }
