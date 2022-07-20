@@ -1,7 +1,7 @@
 class Mutations::CreateDog < Mutations::BaseMutation
   argument :name, String, required: false
   argument :age, Integer, required: false
-  argument :breed, String, required: true
+  argument :breed, String, required: false
   argument :user_id, Integer, required: true
   type Types::DogType
 
