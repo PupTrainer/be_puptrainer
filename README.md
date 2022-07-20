@@ -23,4 +23,12 @@ This application is the back-end repository for [PupTrainer](https://pup-trainer
 
 # Queries
 <h3>Fetch User by User ID </h3>
-<img src=/fetchUser(id).png alt=portfolio ; " />
+<h5>The fetchUser query can be sent with a user ID as an argument.</h5>
+<img src=/1fetchUser(id).png alt=portfolio ; " />
+
+<br>
+<br>
+
+<h3>Fetch User by Email </h3>
+<h5>The fetchUser query can also be sent with a user's email as an argument.</h5>
+<img src=/fetchUser(email).png alt=portfolio ; " />
