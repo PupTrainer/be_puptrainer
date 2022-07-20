@@ -36,6 +36,12 @@ This application is the back-end repository for [PupTrainer](https://pup-trainer
 <br>
 
 # Queries
+<div align="center">
+ 
+<h2>All Queries can return any of the shown fields, or if the fields are not needed in the response, simply do not include them in the request.  Our queries are set up to allow for any relationships to be returned in the response.</h2>
+ 
+ </div>
+
 <h3>Fetch User by User ID </h3>
 <h5>The fetchUser query can be sent with a user ID as an argument.</h5>
 <img src=/1fetchUser(id).png />
