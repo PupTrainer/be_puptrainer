@@ -4,7 +4,10 @@ Skill.destroy_all
 
 user1 = User.create!(username: "brisket_enthusiast", email: "steak@meats.com")
 
-dog1 = Dog.create!(name: "skeeter", age: 2, breed: "cardigan welsch corgi", user_id: user1.id)
+dog1 = Dog.create!(name: "Skeeter", age: 2, breed: "Cardigan Welsch Corgi", user_id: user1.id)
+dog2 = Dog.create!(name: "String Bean", age: 2, breed: "Mut", user_id: user1.id)
+
+
 
 # sit = Skill.create!(name: "Sit", level: 1, description: 'Step 1. Get your dogs attention with a treat. 2. While raising your hand upwards, say "sit". 3. Your dog should sit and look at you. 4. Reward your dog with the treat.', criteria: "Your dog should sit right as you are saying the command, and stay sitting until you release them", youtube_link: "https://www.youtube.com/watch?v=EDgi2sLlWAU")
 # down = Skill.create!(name: "Down", level: 2, description: 'Step 1. Get your dogs attention with a treat. 2. While lowering your hand to the floor and moving it towards you, say "down". 3. Your dog should lay down look at you. 4. Reward your dog with the treat.', criteria: "Your dog should lay down right as you are saying the command, and stay laying until you release them", youtube_link: "https://www.youtube.com/watch?v=vkHs_rKdloc")
@@ -46,6 +49,9 @@ sit = Skill.create!(name: "Sit", level: 1, description: "Step 1. Get your dog's 
 
 down = Skill.create!(name: "Down", level: 1, description: "Step 1. Get your dog's attention with a treat. Step 2. While lowering your hand to the floor and moving it in front of your dog's eyes, say 'Down'. Step 3. Your dog should lay down on its belly with its front legs out stretched and look at you.  Step 4. Reward your dog with the treat.", criteria: "Your dog should lay down after you say the command and say there until you release them.", youtube_link: "XWyfAHk-9M4")
 
+dog_skill1 = DogSkill.create!(dog_id: dog1.id, skill_id: bed.id)
+dog_skill2 = DogSkill.create!(dog_id: dog1.id, skill_id: sit.id)
+dog_skill3 = DogSkill.create!(dog_id: dog2.id, skill_id: bed.id)
 
 
 
