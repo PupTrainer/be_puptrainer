@@ -14,7 +14,15 @@
 </div>
 
 <br>
+
+
+# Intro
+ <div align="left">
+This application is the back-end repository for [PupTrainer](https://pup-trainer.herokuapp.com/), the front-end repository can be found [HERE](https://github.com/PupTrainer/fe_puptrainer).  The back-end application was built with a Ruby on Rails API using GraphQL.  The front-end application was built with React using GraphQL.  The back-end is also deployed to Heroku, and can be found [HERE](https://pup-trainer-api.herokuapp.com/)
+</div>
+
 <br>
+
 
 # Database
  <div align="left">
@@ -23,16 +31,6 @@ Our PostgreSQL database consists of four different tables.  A Users table, a Dog
 <img src=/db_schema.png /> 
 </div>
 
-<br>
-<br>
-
-
-# Intro
- <div align="left">
-This application is the back-end repository for [PupTrainer](https://pup-trainer.herokuapp.com/), the front-end repository can be found [HERE](https://github.com/PupTrainer/fe_puptrainer).  The back-end application was built with a Ruby on Rails API using GraphQL.  The front-end application was built with React using GraphQL.
-</div>
-
-<br>
 <br>
 
 # Queries
@@ -47,20 +45,19 @@ This application is the back-end repository for [PupTrainer](https://pup-trainer
 <img src=/1fetchUser(id).png />
 
 <br>
-<br>
+
 
 <h3>Fetch User by Email </h3>
 <h5>The fetchUser query can also be sent with a user's email as an argument.</h5>
 <img src=/fetchUser(email).png />
 
 <br>
-<br>
+
 
 <h3>Fetch Dog </h3>
 <h5>The fetchDog query takes an argument of a Dog's ID</h5>
 <img src=/fetchDog.png />
 
-<br>
 <br>
 
 <h3>Fetch Skill </h3>
@@ -68,13 +65,11 @@ This application is the back-end repository for [PupTrainer](https://pup-trainer
 <img src=/fetchSkill.png />
 
 <br>
-<br>
 
 <h3>Fetch Skills </h3>
 <h5>The fetchSkils query returns all Skills in the database</h5>
 <img src=/fetchSkills.png />
 
-<br>
 <br>
 
 # Mutations
@@ -85,13 +80,11 @@ This application is the back-end repository for [PupTrainer](https://pup-trainer
  </div>
  
 <br>
-<br>
 
 <h3>Create User</h3>
 <h5>The createUser mutation requires a unique email and a unique username.  If a user already exists with the given email and username, the request will return that original user.  The request can also include a users dogs and dog skills if put into the request.</h5>
 <img src=/createUser.png />
 
-<br>
 <br>
 
 <h3>Create Dog</h3>
@@ -99,20 +92,17 @@ This application is the back-end repository for [PupTrainer](https://pup-trainer
 <img src=/createDog.png />
 
 <br>
-<br>
  
  <h3>Add Dog Skill</h3>
 <h5>The addDogSkill mutations takes three arguments, dogId, skillId, and passed.  Passed should be set as false.  This mutation is to add a skill to an individual dog, so the user can start the training process.  The response includes all DogSKill attributes.</h5>
 <img src=/addDogSkill.png />
 
 <br>
-<br>
  
  <h3>Pass Dog Skill</h3>
 <h5>The passDogSkill mutation is used when a dog has 'passed' the skill given.  The request takes two arguments, Dog ID and Skill ID.  The response includes the dogSkill ID, the Dog's ID, and the Skill's ID</h5>
 <img src=/passDogSkill.png />
 
-<br>
 <br>
  
  
