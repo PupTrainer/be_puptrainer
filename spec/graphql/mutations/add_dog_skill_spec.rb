@@ -5,9 +5,9 @@ module Mutations
     describe '.resolve' do
       it 'returns a dog_skill ' do
       
-        user = create(:user)
-        dog = create(:dog, user_id: user.id)
-        skill = Skill.create!(name: 'Sit', level: 1,
+        @user = create(:user)
+        @dog = create(:dog, user_id: @user.id)
+        @skill = Skill.create!(name: 'Sit', level: 1,
                               description: 'Step 1. Get your dogs attention with a treat. 2. While raising your hand upwards, say "sit". 3. Your dog should sit and look at you. 4. Reward your dog with the treat.', criteria: 'Your dog should sit right as you are saying the command, and stay sitting until you release them', youtube_link: 'https://www.youtube.com/watch?v=EDgi2sLlWAU')
 
         post '/graphql', params: { query: query }
@@ -22,18 +22,18 @@ module Mutations
       end
 
       it 'will return an error message if required inputs are missing' do 
-        post "/graphql", params: { query: bad_query }
+        post "/graphql", params: { query: missing_dog_id }
 
         json = JSON.parse(response.body, symbolize_names: true)
         data = json[:errors]
-
-        expect(data[0]).to eq("One or more required inputs missing. Please double check and try again")
+        binding.pry
+        expect(data[0][:message]).to eq("One or more required inputs missing. Please double check and try again")
       end 
 
       def query
         <<~GQL
                   mutation {
-            addDogSkill(input: {dogId: 1, skillId: 1, passed: false}) {
+            addDogSkill(input: {dogId: #{@dog.id}, skillId: #{@skill.id}, passed: false}) {
               id
               dogId
               skillId
@@ -42,6 +42,19 @@ module Mutations
           }
         GQL
       end
+
+      def missing_dog_id
+        <<~GQL
+                  mutation {
+            addDogSkill(input: {dogId: null, skillId: 1, passed: false}) {
+              id
+              dogId
+              skillId
+              passed
+            }
+          }
+        GQL
+      end 
     end
   end
 end
