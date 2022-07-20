@@ -11,8 +11,13 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :user, Types::UserType, null: true
+    field :skills, [Types::SkillType], null: true
     def user
       User.find(object.user_id)
     end
+
+    def skills 
+     self.object.skills
+    end 
   end
 end
