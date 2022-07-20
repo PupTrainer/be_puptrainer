@@ -1,7 +1,8 @@
 // http request body:
 mutation {
     passDogSkill(input: {
-      dogSkillId:5
+      dog_id: 5
+      skill_id: 2
     }) {
           dogSkill {
           id
@@ -28,9 +29,19 @@ mutation {
 
 // Possible Errors
 //
-// "Warning: You're trying to pass a skill that our records indicate this 
-//  pet has already passed"
+
+// "DogSkill Not Found: Your given dog_id and skill_id do not have a matching dog_skill. Please check your inputs"
 //
-// This error indicates that the pet_skill record was found in our database, 
-// but its value was already set to true. This should not break any functionality, 
-// but may indicate that something isn't behaving correctly.
+// This error indicates that nothing was found for the given inputs. It may indicate a bad parameter was passed.
+
+// "Warning: 'pass' was already set to 'true' for this dog_skill"
+//
+// This warning is not code-breaking, but it indicates that the dog_skill you are trying to assign as "true" has already been assigned as such.
+
+// "Server Error: our app's gone off the rails! please report this error to BE team."
+//
+// This error should never happen. It indicates that none of the expected happy or sad path outcomes occured. This necessitates a code review. 
+
+// "Server Error: We expected your queary to return one result, but found several. Please check your inputs"
+//
+// This error should never happen. It would imply that a dog was somehow assigned the same skill more than once. This necessitates a code review.
