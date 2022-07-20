@@ -9,7 +9,6 @@ module Mutations
     describe '.resolve' do
       it 'creates a dog' do
         expect(Dog.count).to eq(0)
-        
         post '/graphql', params: { query: query }
         json = JSON.parse(response.body, symbolize_names: true)
         data = json[:data][:createDog]
@@ -22,27 +21,30 @@ module Mutations
       end
 
       it 'returns an error message if dog name is missing' do 
-       
         post "/graphql", params: { query: missing_dog_name }
 
         json = JSON.parse(response.body, symbolize_names: true)
         data = json[:errors]
 
         expect(data[0][:message]).to eq("One or more required inputs missing. Please double check and try again")
-
       end
 
       it 'returns an error message if dog age is missing' do 
-       
         post "/graphql", params: { query: missing_dog_age }
-
         json = JSON.parse(response.body, symbolize_names: true)
         data = json[:errors]
 
         expect(data[0][:message]).to eq("One or more required inputs missing. Please double check and try again")
-
       end
-      
+
+      it 'returns an error message if dog breed is missing' do 
+        post "/graphql", params: { query: missing_dog_breed }
+        json = JSON.parse(response.body, symbolize_names: true)
+        data = json[:errors]
+
+        expect(data[0][:message]).to eq("One or more required inputs missing. Please double check and try again")
+      end
+
       def query
         <<~GQL
                 mutation {
@@ -99,6 +101,30 @@ module Mutations
                     name: "Cujo"
                     age: null
                     breed: "Saint Bernard"
+                    userId: #{@user.id}
+                  })  {
+                      id
+                      name
+                      age
+                      breed
+                      user {
+            id
+            username
+            email
+              }
+            }
+          }
+        GQL
+      end
+
+      def missing_dog_breed
+        <<~GQL
+                mutation {
+                  createDog(input: {
+
+                    name: "Cujo"
+                    age: 2
+                    breed: null
                     userId: #{@user.id}
                   })  {
                       id
