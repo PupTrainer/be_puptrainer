@@ -34,7 +34,7 @@ module Mutations
         <<~GQL
                   mutation {
             addDogSkill(input: {dogId: #{@dog.id}, skillId: #{@skill.id}, passed: false}) {
-              id
+              
               dogId
               skillId
               passed
