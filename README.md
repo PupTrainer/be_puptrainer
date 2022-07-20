@@ -20,7 +20,7 @@
  <div align="left">
 Our PostgreSQL database consists of four different tables.  A Users table, a Dogs table, a DogSkills, and a DogSkills joins table.  The Users table has columns for unique username, unique email, and timestamps.  The Dogs table has columns for name, age, breed, and timestamps.  A User can have many Dogs and a Dog belongs to a User.  The Skills table has columns for level, name, description, criteria, youtube_link, and timestamps.  A Dog can have many Skills through DogSkills, and Skills can have many Dogs through DogSkills. 
  
-<img src=/db_schema.png alt=db_schema; " /> 
+<img src=/db_schema.png /> 
 </div>
 
 <br>
