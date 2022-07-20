@@ -74,3 +74,50 @@ This application is the back-end repository for [PupTrainer](https://pup-trainer
 <h5>The fetchSkils query returns all Skills in the database</h5>
 <img src=/fetchSkills.png />
 
+<br>
+<br>
+
+# Mutations
+<div align="center">
+ 
+<h2>All Mutations can also return any of the shown fields, or if the fields are not needed in the response, simply do not include them in the request.  Our Mutations are set up to allow for any relationships to be returned in the response.</h2>
+ 
+ </div>
+ 
+<br>
+<br>
+
+<h3>Create User</h3>
+<h5>The createUser mutation requires a unique email and a unique username.  If a user already exists with the given email and username, the request will return that original user.  The request can also include a users dogs and dog skills if put into the request.</h5>
+<img src=/createUser.png />
+
+<br>
+<br>
+
+<h3>Create Dog</h3>
+<h5>The createDog mutation requires a name, age, and breed, all of which will be returned in the response.  If the request includes a User and their attributes, those attributes will also come back in the response.</h5>
+<img src=/createDog.png />
+
+<br>
+<br>
+ 
+ <h3>Add Dog Skill</h3>
+<h5>The addDogSkill mutations takes three arguments, dogId, skillId, and passed.  Passed should be set as false.  This mutation is to add a skill to an individual dog, so the user can start the training process.  The response includes all DogSKill attributes.</h5>
+<img src=/addDogSkill.png />
+
+<br>
+<br>
+ 
+ <h3>Pass Dog Skill</h3>
+<h5>The passDogSkill mutation is used when a dog has 'passed' the skill given.  The request takes two arguments, Dog ID and Skill ID.  The response includes the dogSkill ID, the Dog's ID, and the Skill's ID</h5>
+<img src=/passDogSkill.png />
+
+<br>
+<br>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
