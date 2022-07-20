@@ -49,10 +49,9 @@ module Mutations
             id
             username
             email
+              }
+            }
           }
-                    }
-
-                }
         GQL
       end
 
@@ -74,10 +73,9 @@ module Mutations
             id
             username
             email
+              }
+            }
           }
-                    }
-
-                }
         GQL
       end
     end
