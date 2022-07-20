@@ -104,6 +104,37 @@ Our PostgreSQL database consists of four different tables.  A Users table, a Dog
 <img src=/passDogSkill.png />
 
 <br>
+
+## **The Team ✨**
+
+Thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+
+  <tr>
+
+
+   <td align="center"><a href="https://github.com/Josenecal"><img src="https://avatars.githubusercontent.com/u/70451678?v=4" width="100px;" alt=""/><br /><sub><b>Joesph S. (he/him)</b></sub></a><br /><a href="https://www.linkedin.com/in/joseph-senecal-3947a9232/" title ="Linked In"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a><br /><a href="https://github.com/PupTrainer/be_puptrainer/commits?author=Josenecal" title="Code">💻</a> <a href="" title="Ideas, Planning, & Feedback">�</a> <a href="" title="Tests">⚠️</a> <a href="https://github.com/PupTrainer/be_puptrainer/pulls?q=is%3Apr+author%3Josenecal" title="Reviewed Pull Requests">👀</a></td>
+
+   <td align="center"><a href="https://github.com/psitosam/landing_page"><img src="https://avatars.githubusercontent.com/u/95240894?v=4" width="100px;" alt=""/><br /><sub><b>Alex P. (he/him)</b></sub></a><br /><a href="https://www.linkedin.com/in/alex-psitos-5429a1232/" title ="Linked In"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a><br /><a href="https://github.com/PupTrainer/be_puptrainer/commits?author=psitosam" title="Code">💻</a> <a href="" title="Ideas, Planning, & Feedback">�</a> <a href="" title="Tests">⚠️</a> <a href="https://github.com/PupTrainer/be_puptrainer/pulls?q=is%3Apr+author%3Apsitosam" title="Reviewed Pull Requests">👀</a></td>
+
+   <td align="center"><a href="https://github.com/alexGrandolph"><img src="https://avatars.githubusercontent.com/u/96802470?v=4" width="100px;" alt=""/><br /><sub><b>Alex R. (he/him)</b></sub></a><br /><a href="https://www.linkedin.com/in/alexgrandolph/" title ="Linked In"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a><br /><a href="https://github.com/PupTrainer/be_puptrainer/commits?author=alexGrandolph" title="Code">💻</a> <a href="" title="Ideas, Planning, & Feedback">�</a> <a href="" title="Tests">⚠️</a> <a href="https://github.com/PupTrainer/be_puptrainer/pulls?q=is%3Apr+author%3AalexGrandolph" title="Reviewed Pull Requests">👀</a></td>
+
+
+   <td align="center"><a href="https://github.com/AliciaWatt"><img src="https://avatars.githubusercontent.com/u/81201783?v=4" width="100px;" alt=""/><br /><sub><b>Alicia W. (she/her)</b></sub></a><br /><a href="https://www.linkedin.com/in/alicia-watt-3bb815225/" title ="Linked In"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a><br /><a href="https://github.com/PupTrainer/be_puptrainer/commits?author=AliciaWatt" title="Code">💻</a> <a href="" title="Ideas, Planning, & Feedback">�</a> <a href="" title="Tests">⚠️</a> <a href="https://github.com/PupTrainer/be_puptrainer/pulls?q=is%3Apr+author%3AAliciaWatt" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
+<!--
  
  
  
