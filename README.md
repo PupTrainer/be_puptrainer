@@ -23,4 +23,4 @@ This application is the back-end repository for [PupTrainer](https://pup-trainer
 
 # Queries
 <h3>Fetch User by User ID </h3>
-![fetchUser(id)](https://user-images.githubusercontent.com/96802470/180081753-606a0091-ffe7-4128-b01c-bdc990b76635.png)
+<img src=/fetchUser(id).png alt=portfolio ; " />
