@@ -17,9 +17,9 @@
 
 
 # Intro
- <div align="left">
+
 This application is the back-end repository for [PupTrainer](https://pup-trainer.herokuapp.com) , the front-end repository can be found [HERE](https://github.com/PupTrainer/fe_puptrainer) .  The back-end application was built with a Ruby on Rails API using GraphQL.  The front-end application was built with React using GraphQL.  The back-end is also deployed to Heroku, and can be found [HERE](https://pup-trainer-api.herokuapp.com)
-</div>
+
 
 <br>
 
