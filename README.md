@@ -23,6 +23,11 @@ This application is the back-end repository for [PupTrainer](https://pup-trainer
 
 <br>
 
+# Getting Started
+
+<div align="left">
+This app uses Ruby version 2.7.2 and Rails version 5.2.8.  To access the endpoints via localhost please ensure you have both of these versions installed locally.  Clone the repo down to your machine. In your command line run `bundle install` next run `rails db:create` then `rails db:seed`. after that running `rails s` should start your local server (port 3000), and the endpoints will be available at localhost:3000/graphql.  If you run into any issues, run `rails db:reset` then try `rails s` again.  In your browser, if you visit localhost3000/graphiql, GraphQL's in-browser GUI will allow you to enter the queries and mutations and see the response. 
+</div>
 
 # Database
  <div align="left">
