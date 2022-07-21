@@ -149,7 +149,7 @@ Our PostgreSQL database consists of four different tables.  A Users table, a Dog
  
 # **The Team ✨**
 
-Thanks go to these wonderful people [emoji key](https://allcontributors.org/docs/en/emoji-key):
+Thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
