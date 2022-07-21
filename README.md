@@ -8,8 +8,8 @@
 ### [Database](#database)
 ### [Queries](#queries)
 ### [Mutations](#mutations)
+### [Tech](#tech)
 ### [The Team](#the-team)
-### [The Tech Behind PupTrainer](#tech-behind-puptrainer)
 
 </div>
 
@@ -18,7 +18,7 @@
 
 # Intro
  <div align="left">
-This application is the back-end repository for [PupTrainer](https://pup-trainer.herokuapp.com/), the front-end repository can be found [HERE](https://github.com/PupTrainer/fe_puptrainer).  The back-end application was built with a Ruby on Rails API using GraphQL.  The front-end application was built with React using GraphQL.  The back-end is also deployed to Heroku, and can be found [HERE](https://pup-trainer-api.herokuapp.com/)
+This application is the back-end repository for [PupTrainer](https://pup-trainer.herokuapp.com) , the front-end repository can be found [HERE](https://github.com/PupTrainer/fe_puptrainer) .  The back-end application was built with a Ruby on Rails API using GraphQL.  The front-end application was built with React using GraphQL.  The back-end is also deployed to Heroku, and can be found [HERE](https://pup-trainer-api.herokuapp.com)
 </div>
 
 <br>
@@ -104,8 +104,39 @@ Our PostgreSQL database consists of four different tables.  A Users table, a Dog
 <img src=/passDogSkill.png />
 
 <br>
+# Tech Used
 
-## **The Team ✨**
+<div align="center">  
+
+
+</br>
+ <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/rails-original-wordmark.svg" alt="Ruby on Rails" height="70" />  
+ <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/ruby-original-wordmark.svg" alt="Ruby" height="70" />  
+ <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/postgresql-original-wordmark.svg" alt="PostgreSQL" height="70" /> 
+ <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/graphql.png" alt="GraphQL" height="70" />  
+ <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="70" /> 
+ </div>
+ 
+ 
+ <div align="center">  
+
+<h2> 🛠 &nbsp; Tools</h2> 
+
+  <br>
+  
+![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
+
+</div>
+ 
+ 
+ 
+ 
+ 
+# **The Team ✨**
 
 Thanks go to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -136,8 +167,7 @@ Thanks go to these wonderful people ([emoji key](https://allcontributors.org/doc
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
 <!--
  
- 
- 
+
  
  
  
