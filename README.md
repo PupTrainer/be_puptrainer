@@ -104,7 +104,8 @@ Our PostgreSQL database consists of four different tables.  A Users table, a Dog
 <img src=/passDogSkill.png />
 
 <br>
-# Tech Used
+
+# Tech
 
 <div align="center">  
 
